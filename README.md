@@ -54,13 +54,6 @@ and tidal current ellipse properties), and to make tidal predictions. </span></p
 <img border=0 width=623 height=351 id="Picture 1"
 src="flowchart_TMD.png">
 
-<p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;background:
-white'><span style='font-size:12.0pt;font-family:"Segoe UI",sans-serif;
-color:#24292E'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;background:
-white'><span style='font-size:12.0pt;font-family:"Segoe UI",sans-serif;
-color:#24292E'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;background:
 white'><span style='font-size:12.0pt;font-family:"Segoe UI",sans-serif;
