@@ -59,6 +59,7 @@ if(upper(HEMI)=='S');
 else
     SGN=+1;
 end
+if(upper(HEMI)=='N'); Y=-Y; end
 SLAT=abs(SLAT);
 SL  = SLAT/CDR;
 RHO = sqrt(X.^2+Y.^2);

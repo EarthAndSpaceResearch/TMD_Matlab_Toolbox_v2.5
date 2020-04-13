@@ -72,4 +72,6 @@ T   = tan(pi/4-lat/2)./((1-E*sin(lat))./(1+E*sin(lat))).^(E/2);
 lon =-(lon-SLON)/CDR;
 x   =-RHO.*T.*sin(lon);
 y   = RHO.*T.*cos(lon);
+
+if(upper(HEMI)=='N'); y=-y; end
 return
