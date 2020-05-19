@@ -72,7 +72,7 @@ TMD works with:
 <p>&nbsp;</p>
 
 
-<i><b>Alternatives to the MATLAB TMD toolbox:<b/></i>
+<i><b>Alternatives to the MATLAB TMD toolbox:</b></i>
 
 <b>FORTRAN:</b> A Fortran version of this package is made available through OSU: <a href="https://www.tpxo.net/otps">OSU Tidal Prediction software (OTPS)</a> 
 
