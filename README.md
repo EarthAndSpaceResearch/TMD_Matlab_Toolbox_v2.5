@@ -25,7 +25,7 @@
   href="tide_elev_map_global_sm.jpg"
   target="_blank"><span style='font-size:12.0pt;font-family:"Segoe UI",sans-serif;
   color:#0366D6;text-decoration:none'><img border=0 width=345 height=215
-  id="Picture 2" src="tide_elev_map_global_sm.jpg"></span></a></p>
+  id="Picture 2" src="TMD_icon_02.png"></span></a></p>
   </td>
  </tr>
 </table>
