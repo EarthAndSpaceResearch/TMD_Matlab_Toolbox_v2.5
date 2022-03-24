@@ -55,8 +55,20 @@ for i1=1:8
  end
 end
 if ni<6,return;end % not enough constituents for inference
-%
-zmin=zeros(18,N,M);   
+
+% compare list of minor constituents with complete list of constituents
+major = cellstr(cid);
+minor = {'2q1','sigma1','rho1','m1','m1','chi1','pi1','phi1','theta1', ...
+    'j1','oo1','2n2','mu2','nu2','lambda2','l2','l2','t2'};
+% only infer minor constituents that are not on the list of major values
+minor_indices = [];
+for i1=1:18
+  if ~ any(strcmp(major,minor(i1)))
+      minor_indices(end+1) = i1;
+  end
+end
+
+zmin=zeros(18,N,M);
 zmin(1,:,:)  = 0.263 *z8(1,:,:) - 0.0252*z8(2,:,:);   %2Q1
 zmin(2,:,:)  = 0.297 *z8(1,:,:) - 0.0264*z8(2,:,:);   %sigma1
 zmin(3,:,:)  = 0.164 *z8(1,:,:) + 0.0048*z8(2,:,:);   %rho1 +
@@ -74,7 +86,7 @@ zmin(14,:,:) = 0.165 *z8(5,:,:) + 0.00487*z8(6,:,:);  %nu2 +
 zmin(15,:,:) = 0.0040*z8(6,:,:) + 0.0074*z8(7,:,:);   %lambda2
 zmin(16,:,:) = 0.0131*z8(6,:,:) + 0.0326*z8(7,:,:);   %L2 +
 zmin(17,:,:) = 0.0033*z8(6,:,:) + 0.0082*z8(7,:,:);   %L2 +
-zmin(18,:,:) = 0.0585*z8(7,:,:);                      %t2 + 
+zmin(18,:,:) = 0.0585*z8(7,:,:);                      %t2 +
 %
 hour = (time - floor(time))*24.D0;
 t1 = 15.*hour;
@@ -141,7 +153,7 @@ u(16,:,:) = u(12,:,:);
 u(17,:,:) = atan2(-0.441*sinn, 1.0 + 0.441*cosn)/rad;
 %     sum over all tides
 %     ------------------
-for k=1:18
+for k=minor_indices
   tmp=squeeze(real(zmin(k,:,:)).*f(k,:,:).*...
                       cos((arg(k,:,:) + u(k,:,:))*rad)-...
                       imag(zmin(k,:,:)).*f(k,:,:).*...
@@ -150,4 +162,3 @@ for k=1:18
   dh(:,:) = dh(:,:) + tmp;
 end
 return
-
