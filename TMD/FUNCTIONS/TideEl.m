@@ -25,8 +25,10 @@ em = 180. * em / pi;
 umajor = (ap + am); 
 uminor = (ap - am);
 uincl = 0.5 * (em + ep);
-uincl = uincl - 180. *  (uincl > 180);
-uphase = - 0.5*(ep-em) ;
+k = (uincl > 180);
+uincl = uincl - 180. * k;
+uphase = - 0.5*(ep - em);
+uphase = uphase + 180. * k;
 uphase = uphase + 360. * (uphase < 0);
 uphase = uphase - 360. * (uphase >= 360);
 return
